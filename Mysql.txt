@@ -1,0 +1,68 @@
+mysql -u root -p -h 127.0.0.1
+
+<------------------------- Codes From Lab ----------------------------------------->
+// Write a query to display the employee last name, department name, location ID, and 
+city of all employees who earn a commission. 
+
+SELECT employees.last_name, departments.department_name, locations.location_id, locations.city FROM
+employees, departments, locations WHERE employees.commission_pct IS NOT NULL;
+
+
+
+
+CREATE TABLE temp_employees(id int PRIMARY KEY, lname varchar(25) NOT NULL, email varchar(25) NOT NULL, hire_data DATE NOT NULL, salary DECIMAL(8, 2) NOT NULL, nid int NOT NULL, gender varchar(7) NOT NULL)
+
+
+INSERT INTO temp_employees(id, lname, email, hire_date, salary, nid, gender)
+VALUES(100, 'King', 'SKING', '1987-06-17', 24000.00, 6, 'MALE');
+
+INSERT INTO temp_employees(id, lname, email, hire_date, salary, nid, gender)
+VALUES(101, 'John', 'NKOCHHA', '1989-09-21', 28000.00, 7, 'MALE');
+
+INSERT INTO temp_employees(id, lname, email, hire_date, salary, nid, gender)
+VALUES(102, 'Lesnar', 'BERNST', '1997-06-25', 30000.00, 8, 'MALE');
+
+INSERT INTO temp_employees(id, lname, email, hire_date, salary, nid, gender)
+VALUES(103, 'Randy', 'JERNST', '1999-06-25', 32000.00, 8, 'MALE');
+
+INSERT INTO temp_employees(id, lname, email, hire_date, salary, nid, gender)
+VALUES(103, 'Kevin', 'KERNST', '2001-06-25', 35000.00, 8, 'MALE');
+
+
+INSERT INTO employees(employees.employee_id, employees.last_name, employees.email, employees.hire_date, employees.job_id, employees.salary)
+SELECT temp_employees.id, temp_employees.lname, temp_employees.email, temp_employees.hire_date, 'IT_PROG', temp_employees.salary FROM temp_employees 
+ON DUPLICATE KEY UPDATE employees.last_name = temp_employees.lname, employees.email = temp_employees.email, employees.hire_date = temp_employees.hire_date, employees.salary = temp_employees.salary
+
+
+https://drive.google.com/file/d/1jbLPdiKDH7oJgYBFmHmmK7s-FEmPgzvh/view?usp=drive_link
+
+
+https://drive.google.com/file/d/1UL5d2l1eh08iKxgS3gRTK0Ncd5LpHLym/view?usp=drive_link 
+
+https://drive.google.com/file/d/1hpsWDBApkvbTUh7vQNvwxDuESzVgFG-1/view?pli=1
+
+
+https://github.com/amiralvi12/Ecommerce-project
+
+
+https://github.com/axios/axios/issues/4907
+https://stackoverflow.com/questions/46805343/angular-how-to-loop-for-numbers
+https://tekloon.medium.com/how-to-add-http-header-to-angular-httpclient-d38d4ccd0eb8
+https://stackoverflow.com/questions/13272406/convert-string-with-commas-to-array
+https://stackoverflow.com/questions/56903199/pass-data-from-dynamic-mat-cell-to-on-click-function
+https://stackoverflow.com/questions/77868506/swiper-in-angular-17
+
+-------------------------------react-links--------------------------
+https://stackoverflow.com/questions/40528557/how-does-array-fromlength-5-v-i-i-work
+
+github
+https://stackoverflow.com/questions/4181861/message-src-refspec-master-does-not-match-any-when-pushing-commits-in-git
+https://stackoverflow.com/questions/25436312/gitignore-not-working
+token: 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
+
+-----------------monogdb---------------------
+https://stackoverflow.com/questions/15171622/mongoimport-of-json-file
+
+
+-----rds------
+https://rds3.northsouth.edu/index.php/students/courseAnalysis/index
